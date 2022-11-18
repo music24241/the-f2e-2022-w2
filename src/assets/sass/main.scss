@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
 
-@import './base';
+@import 'base';
 
 @import "index";
 
@@ -11,5 +11,30 @@
 @layer base {
   html {
     font-family: 'Noto Sans TC', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-neutral-100;
+  }
+
+  select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='#78797D' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    //background-position-x: 100%;
+    //background-position-y: 50%;
+  }
+}
+
+@layer components {
+  .popover {
+    @apply absolute z-10 rounded-lg bg-white shadow-100 transition duration-150 ease-in-out;
+
+    &.hide {
+      @apply pointer-events-none opacity-0;
+    }
   }
 }
